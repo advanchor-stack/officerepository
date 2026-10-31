@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Sets the character encoding so text displays correctly -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the website adjust to different screen sizes, including phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The title displayed in your browser tab -->
+    <title>My Blog & Portfolio</title>
+
+
+    <!-- ================================================== -->
+    <!-- CSS: Controls the appearance and layout of the page -->
+    <!-- ================================================== -->
+
+    <style>
+
+        /* ------------------------------
+           1. GENERAL PAGE SETTINGS
+           ------------------------------ */
+
+        /* Applies basic styling to the entire webpage */
+        body {
+            margin: 0; /* Removes the browser's default outer spacing */
+            font-family: Arial, sans-serif; /* Sets the text style */
+            color: #292929; /* Sets the default text color */
+            background-color: #ffffff; /* Makes the page background white */
+            line-height: 1.6; /* Adds comfortable spacing between lines */
+        }
+
+
+        /* ------------------------------
+           2. TOP NAVIGATION BAR
+           ------------------------------ */
+
+        /* Arranges the logo and navigation links in one row */
+        nav {
+            display: flex; /* Places items next to each other */
+            justify-content: space-between; /* Separates logo and links */
+            align-items: center; /* Vertically aligns the items */
+            padding: 22px 6%; /* Adds space inside the navigation bar */
+            border-bottom: 1px solid #eeeeee; /* Adds a subtle bottom line */
+        }
+
+        /* Styles the website logo or name */
+        .logo {
+            font-size: 20px; /* Controls the text size */
+            font-weight: bold; /* Makes the text bold */
+        }
+
+        /* Styles the navigation links */
+        nav a {
+            color: #333333; /* Sets the link color */
+            text-decoration: none; /* Removes the default underline */
+            margin-left: 22px; /* Adds space between links */
+            font-size: 15px;
+        }
+
+        /* Changes the link color when the mouse hovers over it */
+        nav a:hover {
+            color: #547a73;
+        }
+
+
+        /* ------------------------------
+           3. MAIN WELCOME SECTION
+           ------------------------------ */
+
+        /* Creates a two-column layout for the introduction and image */
+        .hero {
+            display: flex; /* Places the two columns side by side */
+            align-items: center; /* Vertically aligns both columns */
+            gap: 40px; /* Adds space between the columns */
+            padding: 70px 6%; /* Adds space around the section */
+            background-color: #f8f8f6; /* Gives the section a soft background */
+        }
+
+        /* Controls the introduction column */
+        .hero-text {
+            flex: 1; /* Allows the column to take up available space */
+        }
+
+        /* Controls the main headline */
+        .hero h1 {
+            font-size: 44px; /* Makes the headline large */
+            line-height: 1.2; /* Keeps multiple headline lines close together */
+            margin-bottom: 20px; /* Adds space below the headline */
+        }
+
+        /* Controls the introduction paragraph */
+        .hero p {
+            color: #666666; /* Makes paragraph text softer than the headline */
+            font-size: 17px;
+        }
+
+        /* Styles the button that takes visitors to your projects */
+        .button {
+            display: inline-block; /* Allows padding around the link */
+            margin-top: 15px;
+            padding: 12px 24px;
+            border: 1px solid #547a73;
+            border-radius: 25px; /* Rounds the button corners */
+            color: #547a73;
+            text-decoration: none;
+        }
+
+        /* Changes the button appearance when hovered over */
+        .button:hover {
+            background-color: #547a73;
+            color: white;
+        }
+
+        /* Creates a placeholder for your future image or project preview */
+        .hero-image {
+            flex: 1; /* Gives the image column equal flexible space */
+            min-height: 300px;
+            padding: 20px;
+            box-sizing: border-box; /* Includes padding in the element's width */
+            background-color: #e8e9e4;
+            border-radius: 18px; /* Rounds the corners */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+
+        /* ------------------------------
+           4. TOPIC SECTION
+           ------------------------------ */
+
+        /* Adds spacing around the topics section */
+        .topics {
+            padding: 50px 6%;
+        }
+
+        /* Places the topic cards side by side */
+        .topic-container {
+            display: flex;
+            gap: 20px; /* Adds space between cards */
+        }
+
+        /* Styles each individual topic card */
+        .topic-card {
+            flex: 1; /* Gives each card equal flexible space */
+            padding: 25px;
+            background-color: #f7f7f5;
+            border-radius: 15px;
+        }
+
+        /* Styles the topic card headings */
+        .topic-card h3 {
+            margin-top: 0;
+        }
+
+
+        /* ------------------------------
+           5. BLOG ARTICLE SECTION
+           ------------------------------ */
+
+        /* Arranges article previews in columns */
+        .article-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Styles each article preview */
+        .article-card {
+            flex: 1;
+            padding: 25px;
+            border: 1px solid #eeeeee;
+            border-radius: 15px;
+        }
+
+        /* Styles the article category label */
+        .category {
+            color: #547a73;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Styles links inside article cards */
+        .article-card a {
+            color: #547a73;
+            text-decoration: none;
+        }
+
+
+        /* ------------------------------
+           6. ABOUT SECTION
+           ------------------------------ */
+
+        /* Gives the About section a slightly different background */
+        .about {
+            padding: 50px 6%;
+            background-color: #f8f8f6;
+        }
+
+
+        /* ------------------------------
+           7. FOOTER
+           ------------------------------ */
+
+        /* Styles the bottom section of the webpage */
+        footer {
+            padding: 25px 6%;
+            text-align: center;
+            color: #666666;
+            font-size: 14px;
+        }
+
+
+        /* ------------------------------
+           8. MOBILE-FRIENDLY DESIGN
+           ------------------------------ */
+
+        /* These rules apply when the screen is 700 pixels wide or less */
+        @media (max-width: 700px) {
+
+            /* Stacks the logo and navigation links vertically */
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            /* Reduces spacing between navigation links */
+            nav a {
+                margin: 0 6px;
+                font-size: 14px;
+            }
+
+            /* Stacks the welcome text and image vertically */
+            .hero {
+                flex-direction: column;
+                padding: 40px 6%;
+            }
+
+            /* Makes the headline smaller on phones */
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            /* Makes the placeholder fill the available width */
+            .hero-image {
+                width: 100%;
+            }
+
+            /* Stacks the topic cards vertically */
+            .topic-container {
+                flex-direction: column;
+            }
+
+            /* Stacks the article cards vertically */
+            .article-container {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- ================================================== -->
+    <!-- HTML: The visible content of your website           -->
+    <!-- ================================================== -->
+
+
+    <!-- 1. NAVIGATION BAR -->
+    <nav>
+
+        <!-- Change this text to your preferred website name -->
+        <div class="logo">My Portfolio</div>
+
+        <!-- Clicking a link takes visitors to that section -->
+        <div>
+            <a href="#home">Home</a>
+            <a href="#topics">Topics</a>
+            <a href="#blog">Blog</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- 2. WELCOME SECTION -->
+    <section class="hero" id="home">
+
+        <!-- Left column: Your introduction -->
+        <div class="hero-text">
+
+            <h1>Exploring Technology, Data & Ideas</h1>
+
+            <p>
+                Welcome to my personal blog and portfolio.
+                Here, I share what I learn, explore new ideas,
+                and document projects along the way.
+            </p>
+
+            <!-- Clicking this button moves visitors to the blog section -->
+            <a class="button" href="#blog">Explore My Blog</a>
+
+        </div>
+
+
+        <!-- Right column: A placeholder for a future image -->
+        <div class="hero-image">
+
+            <p>
+                Your featured image or project preview will go here.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- 3. TOPIC CARDS -->
+    <section class="topics" id="topics">
+
+        <h2>Explore My Topics</h2>
+
+        <p>
+            A collection of subjects I'm exploring and learning about.
+        </p>
+
+        <div class="topic-container">
+
+            <!-- First topic card -->
+            <div class="topic-card">
+                <h3>Technology & AI</h3>
+
+                <p>
+                    Exploring artificial intelligence,
+                    technology, and emerging tools.
+                </p>
+            </div>
+
+
+            <!-- Second topic card -->
+            <div class="topic-card">
+                <h3>Data Analytics</h3>
+
+                <p>
+                    Learning about data, Python,
+                    and analytical methods.
+                </p>
+            </div>
+
+
+            <!-- Third topic card -->
+            <div class="topic-card">
+                <h3>Projects & Tutorials</h3>
+
+                <p>
+                    Sharing projects, practical examples,
+                    and things I learn along the way.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 4. BLOG ARTICLE PREVIEWS -->
+    <section class="topics" id="blog">
+
+        <h2>Latest Articles</h2>
+
+        <p>
+            Notes, explanations, and ideas worth exploring.
+        </p>
+
+        <div class="article-container">
+
+            <!-- First article preview -->
+            <div class="article-card">
+
+                <span class="category">Artificial Intelligence</span>
+
+                <h3>Understanding AI Fundamentals</h3>
+
+                <p>
+                    An introduction to AI, machine learning,
+                    and how these technologies relate to each other.
+                </p>
+
+                <!-- This link is a placeholder for now -->
+                <a href="#about">Read more →</a>
+
+            </div>
+
+
+            <!-- Second article preview -->
+            <div class="article-card">
+
+                <span class="category">Data Analytics</span>
+
+                <h3>Getting Started with Python</h3>
+
+                <p>
+                    Exploring Python and its potential
+                    applications in business analytics.
+                </p>
+
+                <!-- This link is a placeholder for now -->
+                <a href="#about">Read more →</a>
+
+            </div>
+
+
+            <!-- Third article preview -->
+            <div class="article-card">
+
+                <span class="category">Web Development</span>
+
+                <h3>Building My First Website</h3>
+
+                <p>
+                    Documenting the process of building
+                    a personal website from scratch.
+                </p>
+
+                <!-- This link is a placeholder for now -->
+                <a href="#about">Read more →</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 5. ABOUT SECTION -->
+    <section class="about" id="about">
+
+        <h2>About This Website</h2>
+
+        <p>
+            This is a growing collection of ideas, learning
+            experiences, technical explorations, and projects.
+        </p>
+
+        <p>
+            My goal is to learn, experiment, and share useful
+            information with others.
+        </p>
+
+    </section>
+
+
+    <!-- 6. FOOTER -->
+    <footer id="contact">
+
+        <p>My Blog & Portfolio | Built from scratch</p>
+
+    </footer>
+
+ 
+</body>
+
+</html>
+c
